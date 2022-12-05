@@ -5,21 +5,28 @@ let Data = {};
 //Game Size
 Game.width = 800;
 Game.height = 400;
-
+let board;
+let loaded=false;
 //Title_Scene
 class Title_Scene extends Phaser.Scene {
-
 	constructor() {
 		super({
 			key: 'Title_Scene'
 		});
 	}
-
 	preload() {
-        this.load.image("background","VideoSlot.png")
-
+		/*Image by <a href="https://www.freepik.com/free-psd/3d-girl-character-jumping-air_17888282.htm#page=2&query=3d%20people&position=5&from_view=keyword">Freepik</a>*/
+        this.load.image("background","VideoSlot.png");
+		fetch('/api/getBoard').then(t=>{
+			t.json().then(j=>{
+				board=j;
+				console.log("loaded data successfully");
+				loaded=true;
+			});
+		});
+		
 	}
-
+//サーバから取得して結果もサーバでシュミレーションしとくだけでチート対策にはなる。
 	create() {
         let staticGroup = this.physics.add.staticGroup();
         let background = staticGroup.create(Game.width/2, Game.height/2, 'background');
@@ -27,10 +34,9 @@ class Title_Scene extends Phaser.Scene {
         background.scaleY = background.scaleY /1.6;
 		//Game Title
 		//let title = this.add.text(Game.width / 2, Game.height / 3 * 1, 'GAME TITLE', {font: '40px Arial'}).setOrigin(0.5);
-
-		//Start Button
-		let start = this.add.text(Game.width / 2, (Game.height *0.54), 'START', {font: '40px Arial'}).setInteractive().setOrigin(0.5).setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
-
+		if(loaded){
+			this.add.text(Game.width / 2, (Game.height *0.54), board[0][0]+"");
+		}
 		start.on('pointerdown', function(pointer) {
 			this.scene.start('Game_Scene');
 		}, this);
