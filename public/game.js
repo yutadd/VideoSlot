@@ -51,7 +51,7 @@ class Title_Scene extends Phaser.Scene {
 		let pro_out=staticGroup.create(Game.width/2, Game.height/2+30,'pro_out');
 		let pro_in=staticGroup.create(Game.width/2, Game.height/2+30,'pro_in');
 		pro_in.scaleY=pro_in.scaleY*0.92;
-		pro_in.scaleX=pro_in.scaleX *(0.001*progress);
+		pro_in.scaleX=(pro_in.scaleX *(0.001*progress)-0.01);
 		progress++;
 	}
 
