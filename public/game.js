@@ -38,7 +38,6 @@ class Title_Scene extends Phaser.Scene {
 		/*start.on('pointerdown', function(pointer) {
 			this.scene.start('Game_Scene');
 		}, this);*/
-
 	}
 	update(){
 		if(progress>1000){
