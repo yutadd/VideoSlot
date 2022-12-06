@@ -8,6 +8,6 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body  style="margin:0;">
-<script type="module" src="game.js"></script>
+<script type="module" src="js/game.js"></script>
 <div id="canvas"></div>
 </body></html>
