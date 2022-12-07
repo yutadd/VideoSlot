@@ -1,0 +1,24 @@
+.title{
+    padding-left:30px;
+    display:inline-block;
+    font-size:70px;
+    color:gold;
+    font-family:'Abril Fatface';
+}
+.login{
+    background-color: #8064A2;
+    border-color:#8064A2;
+    margin-top:16px;
+    font-size:30px;
+    font-family:'Abril Fatface';
+}
+.play{
+    background-color: #8064A2;
+    border-color:#8064A2;
+    margin-left:39%;
+    margin-top:20%;
+    padding:8px;
+    font-size:78px;
+    border-radius:16px;
+    font-family:'メイリオ' BOLD;
+}

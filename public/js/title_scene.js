@@ -1,6 +1,6 @@
-  import {Game,Data,setLoaded} from "./game.js"
+  import {Game,Data,setLoaded,setBoard} from "./game.js"
   let progress=0;
-  let board=[{}];
+
  export default class Title_Scene extends Phaser.Scene{
 	update(){
 		if(progress>1000){
@@ -32,9 +32,9 @@
 		this.load.image("pro_out","progress_out.png");
 		fetch('/api/getBoard').then(t=>{
 			t.json().then(j=>{
-				board=j;
 				console.log("loaded data successfully");
 				setLoaded(true);
+				setBoard(j)
 			});
 		});
     }

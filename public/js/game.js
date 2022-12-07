@@ -2,6 +2,13 @@ import Title_Scene from "./title_scene.js"
 import Game_Scene from "./game_scene.js"
 
 //変数
+let board=[{}];
+export function setBoard(_board){
+board=_board;
+}
+export function getBoard(){
+return board
+}
 export let Game = {};
 export let Data = {};
 //Game Size
