@@ -3,7 +3,7 @@
 
  export default class Title_Scene extends Phaser.Scene{
 	update(){
-		if(progress>1000){
+		if(progress>333){
 			this.scene.start('Game_Scene');
 		}
         let staticGroup =this.physics.add.staticGroup();
@@ -13,11 +13,12 @@
 		let pro_out=staticGroup.create(Game.width/2, Game.height/2+30,'pro_out');
 		let pro_in=staticGroup.create(Game.width/2, Game.height/2+30,'pro_in');
 		pro_in.scaleY=pro_in.scaleY*0.92;
-		pro_in.scaleX=(pro_in.scaleX *(0.001*progress)-0.01);
+		pro_in.scaleX=(pro_in.scaleX *(0.003*progress)-0.01);
 		progress++;
 	}
     create() {
 		this.physics.world.setFPS(60);
+		console.log("fps was set.");
 		//Game Title
 		//let title = this.add.text(Game.width / 2, Game.height / 3 * 1, 'GAME TITLE', {font: '40px Arial'}).setOrigin(0.5);
 

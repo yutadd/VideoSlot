@@ -20,10 +20,8 @@ export default class Game_Scene extends Phaser.Scene {
 				background.scaleY=background.scaleY*0.5;
 				l=l+a;
 			}
-			console.log(l)
 		}
 	}
-
 	update() {
 
 	}

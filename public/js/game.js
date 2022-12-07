@@ -31,7 +31,7 @@ let config = {
 	parent: 'canvas',
 	width: Game.width,
 	height: Game.height,
-	pixelArt: true,
+	pixelArt: false,
 	scale: {
         	mode: Phaser.Scale.FIT,
 		autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
